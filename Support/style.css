@@ -1,0 +1,292 @@
+*{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+body{
+    padding: 0%;
+    margin: 0%;
+    background-color: #f3eec3;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition-duration: 1s;
+}
+
+.footerSection {
+    font-size: 50px;
+}
+
+.topbar{
+    display: flex;
+    justify-content: space-between;
+    margin: 0.3em 0.4em;
+    background-color: #b0d0d3;
+    border-radius: 10px;
+}
+
+.sideIndent {
+    margin: 0% 2%;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+}
+
+#financeDashboard {
+    padding-left: 5px;
+    font-size: 1.2em;
+}
+.navbar{
+    width: 20em;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+a{
+    text-decoration: none;
+}
+.navbarItem{
+    margin: auto;
+    font-size: 1.1em;
+}
+
+.heroSection
+{
+    margin-top: 1em;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.heroHeading{
+    margin: auto;
+}
+.heroHeading button{
+    background-color: #eca53c;
+    color: white;
+    border: 0px;
+    padding: 0.3em;
+    border-radius: 3px;
+    margin-top: 0.9em;
+}
+.heroSection img{
+    margin: auto;
+    border-radius: 10px;
+}
+
+.benefitSlider{
+    height: 40vh;
+    background-size: fill;
+    background-color: #f6deba;
+    overflow: hidden;
+    margin: 3% 0%;
+}
+
+.benefitSlider div{
+    position: absolute;
+    bottom: 25px;
+    right: 450px;
+    text-align: center;
+}
+
+.featuresHeader {
+    display: flex;
+    background-color: #F7E3AF;
+    margin: 1em 0.2em;
+    border-radius: 10px;
+    justify-content: space-between;
+}
+
+.featuresHeader h4 {
+    align-self: center;
+}
+
+.featuresText {
+    font-size: 2em;
+    color: #c08497;
+}
+
+footer {
+    margin-top: auto;
+    background-color: #b0d0d3;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+
+footer h4 {
+    text-align: center;
+    padding-right: 2%;
+    border-right: 1px solid black;
+}
+
+footer div ul {
+    list-style-type: none;
+}
+
+.contactForm {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    width: 30%;
+    align-self: center;
+}
+
+.contactForm input, .contactForm textarea {
+    margin: 0.6em 0em;
+}
+
+.contactFormHeading{
+    text-align: center;
+    font-size: 3em;
+}
+
+.submitBtn{
+    max-width: 5em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input {
+    margin: 4em;
+}
+.loginSignUpBtn{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.clicked {
+    transition: 1s;
+    transition-timing-function: ease;
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+.notClicked {
+    transition: 1s;
+    transition-timing-function: ease;
+    font-size: 1em;
+    font-weight: normal;
+}
+
+#login button {
+    border-radius: 10px;
+    max-width: 250px;
+    padding: 0.3em;
+    margin: auto;
+}
+
+#login label {
+    font-size: 1.5em;
+    padding-bottom: 0.3em;
+}
+
+#login input {
+    margin: 0%;
+    margin-bottom: 4%;
+}
+
+
+.loginSignUpSection {
+    padding: 5% 0%;
+}
+
+#login {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: auto;
+}
+
+/* #login form{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+} */
+
+#signup{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 40%;
+}
+
+#signup input{
+    margin: 0px;
+    margin-bottom: 4%;
+}
+
+#signup label {
+    font-size: 1.5em;
+    padding-bottom: 0.3em;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 10% 90%;
+    height: 77vh;
+}
+.DashboardSideButtons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    background-color: #ffe8c5;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.DashboardSideButtons img{
+    width: 3em;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-evenly;
+    height: 40%;
+}
+
+.cards div{
+    border-radius: 100px;
+    width: 30%;
+    height: 100%;
+}
+
+.featuresCard{
+    display: flex;
+    width: 60%;
+    margin: auto;
+}
+
+.padding{
+    padding: 0.7em 0em;
+}
+
+.padding img {
+    padding-right: 0.7em;
+}
+
+table, th, td {
+    border: 1px solid blue;
+    border-collapse: collapse;
+}
+td {
+    width: 250px;
+}
+
+center {
+    padding-bottom: 2%;
+}
+
+.smallCards {
+    display: flex;
+    justify-content: space-around;
+}
+
+.smallCards div span {
+    text-align: center;
+}
+
