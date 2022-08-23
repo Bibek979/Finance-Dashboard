@@ -79,6 +79,12 @@ else {
                         <th>Debit/Credit</th>
                         <th>Reason</th>    
                     </tr>
+
+                    <?php
+                    include_once 'Support/connection.php';
+                    $query = 'select date, amount, Reason from savings_expense_table'
+                    
+                    ?>
                     <tr>
                         <td>02-May-2002</td>
                         <td>1000</td>
