@@ -75,34 +75,35 @@ else {
                 <table>
                     <tr>
                         <th>Date</th>
-                        <th>Amount</th>
+                        <th>Amount ( in &#8377;)</th>
                         <th>Debit/Credit</th>
                         <th>Reason</th>    
                     </tr>
 
                     <?php
                     include_once 'Support/connection.php';
-                    $query = 'select date, amount, Reason from savings_expense_table'
+                    $query = 'select date, amount,payment_type, Reason from savings_expense_table';
+                    $result = mysqli_query($con, $query);
+                    if(mysqli_num_rows($result) > 0) {
+                        while($row = mysqli_fetch_assoc($result)) {
+                            $tempcreditconv = "specify";
+                            $paymentype = $row['payment_type'];
+                            if($paymentype == 01){
+                                $tempcreditconv = "Debited";
+                            }
+                            else {
+                                $tempcreditconv = "Credited";
+                            }
+                            echo "<tr>
+                            <td>" . $row['date'] . "</td>
+                            <td>" . $row['amount'] . "</td>
+                            <td>" . $tempcreditconv . "</td>
+                            <td>" . $row['Reason'] . "</td>
+                        </tr>";
+                        }
+                    }
                     
                     ?>
-                    <tr>
-                        <td>02-May-2002</td>
-                        <td>1000</td>
-                        <td>Credit</td>
-                        <td>Birthday Party</td>
-                    </tr>
-                    <tr>
-                        <td>03-May-2002</td>
-                        <td>3000</td>
-                        <td>Debit</td>
-                        <td>Google Shopping</td>
-                    </tr>
-                    <tr>
-                        <td>05-June-2002</td>
-                        <td>1000</td>
-                        <td>Credit</std>
-                        <td>Alexa Purchase</td>
-                    </tr>
                 </table>
             </div>
         </center>
