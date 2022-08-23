@@ -115,9 +115,10 @@ footer {
 
 
 footer h4 {
-    text-align: center;
+    align-self: center;
     padding-right: 2%;
     border-right: 1px solid black;
+
 }
 
 footer div ul {
@@ -223,10 +224,15 @@ input {
     padding-bottom: 0.3em;
 }
 
+
 .dashboard {
     display: grid;
     grid-template-columns: 10% 90%;
     height: 77vh;
+}
+
+.wishing {
+    font-size: 1em;
 }
 .DashboardSideButtons{
     display: flex;
@@ -241,6 +247,8 @@ input {
 
 .DashboardSideButtons img{
     width: 3em;
+    margin-top: 0.5em;
+    cursor: pointer;
 }
 
 .cards {
@@ -288,5 +296,16 @@ center {
 
 .smallCards div span {
     text-align: center;
+}
+
+#savedamount, #savedreason, #expensedamount, #expensedreason {
+    margin: 0;
+}
+
+a:hover {
+    text-decoration: none;
+    background-color: #a1eff6;
+    border-radius: 5px;
+    transition: linear 1s;
 }
 

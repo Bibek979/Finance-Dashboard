@@ -2,7 +2,6 @@
     
 // }
 console.log("Bibek")
-document.getElementById("login").style.display = "none";
 const signupBtn = (val) =>{
     console.log(val);
     if(val)
