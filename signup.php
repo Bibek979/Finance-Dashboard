@@ -26,7 +26,7 @@ function loginBtnClicked(){
     }
     else{
         include 'Support/connection.php';
-        $sql = "SELECT fname,pwd FROM user_info WHERE email='$email'";
+        $sql = "SELECT fname, uid, pwd FROM user_info WHERE email='$email'";
         $result = mysqli_query($con, $sql);
         if(mysqli_num_rows($result) > 0){
             $row = mysqli_fetch_assoc($result);
@@ -34,6 +34,7 @@ function loginBtnClicked(){
                 msgDisplayer("Login Successful");
                 $_SESSION['loginStatus'] = true;
                 $_SESSION['loggedInUser'] = $row["fname"];
+                $_SESSION['loggedInUserID'] = $row["uid"];
                 //msgDisplayer($_SESSION['loggedInUser']);
                 header("Location: dashboard.php");
                 exit;
@@ -124,9 +125,9 @@ if(isset($_POST['loginbtn'])){
         <div>
             <form id="login" method="post" action="">
                 <label for="email">Email</label>
-                <input type="email" name="email" id="loginemail">
+                <input type="email" name="email" id="loginemail" autocomplete="username">
                 <label for="password">Password</label>
-                <input type="password" name="password" id="loginpassword">
+                <input type="password" name="password" id="loginpassword" autocomplete="current-password">
                 <button type="submit" name="loginbtn">Login</button>
             </form>
         </div>
@@ -138,18 +139,20 @@ if(isset($_POST['loginbtn'])){
             <label for="dob">Date Of Birth</label>
             <input type="date" name="dob" id="dob">
             <label for="email">Email</label>
-            <input type="email" name="Email" id="signupemail">
+            <input type="email" name="Email" id="signupemail" autocomplete="username">
             <label for="password">New Password</label>
-            <input type="password" name="newPassword" id="signupnewpwd">
+            <input type="password" name="newPassword" id="signupnewpwd" autocomplete="new-password">
             <label for="confpassword">Confirm Password</label>
-            <input type="password" name="confPassword" id="signupconfpwd">
+            <input type="password" name="confPassword" id="signupconfpwd" autocomplete="new-password">
             <div class="formBtns">
                 <button type="submit" name="signupbtn">Sign Up !</button>
                 <button type="reset">Reset Input</button>
             </div>
         </form>
     </section>
-    <?php include_once 'Support/footer.php';?>
+    <?php include_once 'Support/footer.php';
+    keepOnLoginTab();
+    ?>
     <script src="script.js"></script>
 </body>
 </html>

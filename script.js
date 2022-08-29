@@ -20,5 +20,3 @@ const signupBtn = (val) =>{
 }
 
 
-
-

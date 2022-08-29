@@ -8,16 +8,17 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form method="post">
+                    <form method="post" id="updateSavingsForm" action="Support/trial.php">
                         <label for="Amount">Amount</label>
                         <input type="number" name="savedAmount" id="savedamount"><br>
                         <label for="Reason">Reason</label>
                         <input type="text" name="savedReason" id="savedreason">
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-btn-secondary" value="Close" data-dismiss="modal">
+                            <!-- <button type="button" class="btn btn-primary" form="updateSavingsForm" name="updatesavingsbtn">Save changes</button> -->
+                            <input type="button" value="Update Expenses" name="updateexpensebtn" onclick="modalSubmitBtnClick(1)" data-dismiss="modal">
+                        </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
@@ -33,16 +34,18 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form method="post">
+                    <form method="post" id="updateExpensesForm" action="Support/trial.php">
                         <label for="Amount">Amount</label>
                         <input type="number" name="expensedAmount" id="expensedamount"><br>
                         <label for="Reason">Reason</label>
                         <input type="text" name="expensedReason" id="expensedreason">
+                        <div class="modal-footer">
+                            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id="updateExpensesForm">Save changes</button> -->
+                            <input type="button" class="btn btn-btn-secondary" value="Close" data-dismiss="modal">
+                            <input type="button" value="Update Expenses" name="updatesavingsbtn" onclick="modalSubmitBtnClick(2)" data-dismiss="modal">
+                        </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>

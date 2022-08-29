@@ -17,6 +17,27 @@ else if($hour>15 && $hour<22) {
 else {
     $wish = "Good Night";
 }
+
+if(isset($_POST['updatesavingsbtn']))
+{
+    echo "Updated Savings";
+    echo "<script type=\"text/javascript\">
+    console.log(\"This should be working\");
+    </script>";
+}
+if(isset($_POST['updateexpensebtn']))
+{
+    echo "Updated Savings";
+    echo "<script type=\"text/javascript\">
+    console.log(\"This should be working\");
+    </script>";
+}
+// if(array_key_exists('updateexpensebtn', $_POST)){
+//     echo "Updated Expenses";
+//     echo "<script type=\"text/javascript\">
+//     alert(\"This should be working\");
+//     </script>";
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,6 +48,7 @@ else {
     <title>Finance Dashboard</title>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="./Support/GoogleCharts.js"></script>
+    <script src="./Support/modalScript.js"></script>
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="http://localhost/PHP-Dashboard/Support/style.css">
