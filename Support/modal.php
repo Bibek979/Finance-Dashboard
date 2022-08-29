@@ -16,7 +16,7 @@
                         <div class="modal-footer">
                             <input type="button" class="btn btn-btn-secondary" value="Close" data-dismiss="modal">
                             <!-- <button type="button" class="btn btn-primary" form="updateSavingsForm" name="updatesavingsbtn">Save changes</button> -->
-                            <input type="button" value="Update Expenses" name="updateexpensebtn" onclick="modalSubmitBtnClick(1)" data-dismiss="modal">
+                            <input type="button" value="Update Savings" name="updateexpensebtn" onclick="modalSubmitBtnClick(1)" data-dismiss="modal">
                         </div>
                     </form>
                 </div>

@@ -7,7 +7,7 @@ const modalSubmitBtnClick = (option) => {
         xhttp.onload = function() {
             console.log(xhttp.responseText);
         }
-        xhttp.open("GET", "Support/trial.php?amount="+amount+"&reason="+reason, true);
+        xhttp.open("GET", "Support/trial.php?amount="+amount+"&reason="+reason+"&option=1", true);
         xhttp.send();
 
     }

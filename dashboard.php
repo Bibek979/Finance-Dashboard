@@ -115,7 +115,8 @@ if(isset($_POST['updateexpensebtn']))
 
                     <?php
                     include_once 'Support/connection.php';
-                    $query = 'select date, amount,payment_type, Reason from savings_expense_table';
+                    $currUser = $_SESSION['loggedInUserID'];
+                    $query = "select date, amount,payment_type, Reason from savings_expense_table WHERE uid_no = '$currUser'";
                     $result = mysqli_query($con, $query);
                     if(mysqli_num_rows($result) > 0) {
                         while($row = mysqli_fetch_assoc($result)) {
