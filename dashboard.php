@@ -3,19 +3,19 @@ session_start();
 if(!(isset($_SESSION['loggedInUser']))){
     header("Location: signup.php");
 }
-$wish = "Good Morning";
+$wish = "Good Morning, ";
 $hour = date('H');
 if($hour>01 && $hour<12){
-    $wish = "Good Morning";
+    $wish = "Good Morning, ";
 }
 else if($hour>12 && $hour<15) {
-    $wish = "Good Afternoon";
+    $wish = "Good Afternoon, ";
 }
 else if($hour>15 && $hour<22) {
-    $wish = "Good Evening";
+    $wish = "Good Evening, ";
 }
 else {
-    $wish = "Good Night";
+    $wish = "Good Night, ";
 }
 
 if(isset($_POST['updatesavingsbtn']))
@@ -77,35 +77,32 @@ if(isset($_POST['updateexpensebtn']))
             <div class="smallCards">
                 <!-- LM stands for Last Month -->
                 <div class="LMExpenseCard">
-                    <span class="lmte">Last Month Total Expense<br>
-                    &#x20B9;5000</span>
+                    <h6>Last Month Total Expense</h6>
+                    <h5>&#x20B9;5000</h5>
                 </div>
                 <div class="LMSavingsCard">
-                <span class="lmts">Last Month Total Savings<br>
-                    &#x20B9;5000</span>
+                    <h6>Last Month Total Savings</h6>
+                    <h5>&#x20B9;5000</h5>
                 </div>
                 <div class="TargetRemaining">
-                    <span class="lmts">Target Remaining<br>
-                    &#x20B9;5000</span>
+                    <h6>Target Remaining</h6>
+                    <h5>&#x20B9;5000</h5>
                 </div>
 
             </div>
 
             <div class="cards" id="cards">
                 <div class="savingsCard" id="savingsCard">
-                    Hello
                 </div>
                 <div class="expenseCard" id="expenseCard">
-                    Expense Here
                 </div>
                 <div class="goalCard" id="goalCard">
-                    Goal Here
                 </div>
             </div>
             <div class="graphs" id="graphs">
-                <center>
+                <div class="transactionSection">
                 <h3>Recent Transactions</h3>
-                <table>
+                <table style="text-align: center;">
                     <tr>
                         <th>Date</th>
                         <th>Amount ( in &#8377;)</th>
@@ -140,7 +137,7 @@ if(isset($_POST['updateexpensebtn']))
                     ?>
                 </table>
             </div>
-        </center>
+        </div class="transactionSection">
         </div>
     </section>
 

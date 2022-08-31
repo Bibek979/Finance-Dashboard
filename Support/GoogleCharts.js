@@ -9,7 +9,8 @@ function drawChart() {
         ['Swimming', 100],
         ['Food', 390],
         ['Commute', 20],
-        ['Football', 55]
+        ['Football', 55],
+        ['Entertainment', 44]
     ]);
     var data2 = google.visualization.arrayToDataTable([
         ['Month', 'Income', 'Expenses'],
@@ -31,16 +32,22 @@ function drawChart() {
         var options3 = {
             title: 'My Daily Activities',
             is3D: true,
+            'height': '250px',
+            'width': '250px'
           };
 
   var options = {
     'title': "This Trial",
-    'is3D': true
+    'is3D': true,
+    'height': '250px',
+    'width': '250px'
   }
   var optionForLine = {
     'title': 'Company Performance',
     'curveType': 'function',
-    'legend': { position: 'bottom' }
+    'legend': { position: 'bottom' },
+    'height': '250px',
+    'width': '250px'
   }
   // Instantiate and draw the chart.
 //   options.chartArea = {left: '10%', width: '100%', height: '65%'}

@@ -1,5 +1,5 @@
 const modalSubmitBtnClick = (option) => {
-    if(option == 1)
+    if(option === 1)
     {
         var amount = parseInt(document.getElementById('savedamount').value);
         var reason = document.getElementById('savedreason').value;
@@ -11,7 +11,7 @@ const modalSubmitBtnClick = (option) => {
         xhttp.send();
 
     }
-    else if(option == 2)
+    else if(option === 2)
     {
         var amount = parseInt(document.getElementById('expensedamount').value);
         var reason = document.getElementById('expensedreason').value;

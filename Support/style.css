@@ -228,7 +228,7 @@ input {
 .dashboard {
     display: grid;
     grid-template-columns: 10% 90%;
-    height: 77vh;
+    
 }
 
 .wishing {
@@ -255,10 +255,11 @@ input {
     display: flex;
     justify-content: space-evenly;
     height: 40%;
+    margin: 1.5em 0em;
 }
 
 .cards div{
-    border-radius: 100px;
+    border-radius: 10px;
     width: 30%;
     height: 100%;
 }
@@ -292,6 +293,11 @@ center {
 .smallCards {
     display: flex;
     justify-content: space-around;
+    margin: 1.5em 0em;
+}
+
+.smallCards div {
+    text-align: center;
 }
 
 .smallCards div span {
@@ -311,4 +317,11 @@ a:hover {
 
 .modal-footer input {
     margin: 0;
+}
+
+.transactionSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.5em 0em;
 }

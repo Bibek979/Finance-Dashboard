@@ -1,3 +1,24 @@
+<?php
+// include_once 'Support/connection.php';
+function holdup() {
+    if(isset($_POST['adminLogin'])){
+        echo "
+        <script type=\"text/javascript\">alert(\"admin Login\")</script>
+        ";
+    }
+    else {
+        echo "
+        <script type=\"text/javascript\">alert(\"admin Login Workign\")</script>
+        ";
+    }
+}
+
+if(isset($_POST['adminLogin'])){
+    holdup();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,14 +32,16 @@
     <link rel="stylesheet" href="./Support/styles.css">
 </head>
 <body>
-    <?php include_once 'Support/topBar.php';?>
-    <form id="login" action="post">
+    <?php include_once 'Support/topBar.php';
+    ?>
+
+    <form id="login" method="post" action="adminDashboard.php">
         <label for="email">Email</label>
         <input type="email" name="email" id="loginemail">
         <label for="password">Password</label>
         <input type="password" name="password" id="loginpassword">
         <div class="loginBtns">
-            <input type="submit"></input>
+            <input type="submit" name="adminLogin"></input>
             <input TYPE="button" VALUE="Back" id="backBtn" onClick="history.go(-1);">
         </div>
     </form>
