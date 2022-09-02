@@ -1,22 +1,4 @@
 <?php
-// include_once 'Support/connection.php';
-function holdup() {
-    if(isset($_POST['adminLogin'])){
-        echo "
-        <script type=\"text/javascript\">alert(\"admin Login\")</script>
-        ";
-    }
-    else {
-        echo "
-        <script type=\"text/javascript\">alert(\"admin Login Workign\")</script>
-        ";
-    }
-}
-
-if(isset($_POST['adminLogin'])){
-    holdup();
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +17,7 @@ if(isset($_POST['adminLogin'])){
     <?php include_once 'Support/topBar.php';
     ?>
 
-    <form id="login" method="post" action="adminDashboard.php">
+    <form id="login" method="post" action="">
         <label for="email">Email</label>
         <input type="email" name="email" id="loginemail">
         <label for="password">Password</label>
@@ -43,6 +25,38 @@ if(isset($_POST['adminLogin'])){
         <div class="loginBtns">
             <input type="submit" name="adminLogin"></input>
             <input TYPE="button" VALUE="Back" id="backBtn" onClick="history.go(-1);">
+            <?php
+            session_start();
+            include_once 'Support/impFunction.php';
+            $_SESSION['adminLoginStatus'] = false;
+            if(isset($_POST['adminLogin'])){
+                $adminEmail = $_POST['email'];
+                $adminPassword = $_POST['password'];
+                if($adminEmail === '' || $adminPassword === '')
+                {
+                    echo "Fill in username and password";
+                }
+                else{
+                    include 'Support/connection.php';
+                    $sql = "SELECT admin_password from admin_table where admin_user_id = '$adminEmail'";
+                    $result = mysqli_query($con,$sql);
+                    if(mysqli_num_rows($result)>0){
+                        $row = mysqli_fetch_assoc($result);
+                        if($adminPassword === $row["admin_password"]){
+                            $_SESSION['adminLoginStatus'] = true;
+                            header("Location: adminDashboard.php");
+                            exit;
+                        }
+                        else {
+                            msgDisplayer("Invalid User Name or Password");
+                        }
+                    }
+                    else{
+                        msgDisplayer("Login Failed");
+                    }
+                }
+            }
+            ?>
         </div>
     </form>
 </body>

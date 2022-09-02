@@ -24,8 +24,19 @@
         <div class="incomingMsgs">
             <h2>Queries</h2>
             <ol>
-                <li>Pricing</li>
-                <li>Support Validity</li>
+        <?php
+        include_once 'Support/connection.php';
+        $query = "SELECT feedback FROM contact_form";
+        $result = mysqli_query($con, $query);
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                echo "<li>".$row['feedback'];
+            }
+        }
+        else{
+            echo "<span>Nothing here yet";
+        }
+        ?>
             </ol>
         </div>
     </section>
