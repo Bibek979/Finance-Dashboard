@@ -24,40 +24,51 @@
         <input type="password" name="password" id="loginpassword">
         <div class="loginBtns">
             <input type="submit" name="adminLogin"></input>
-            <input TYPE="button" VALUE="Back" id="backBtn" onClick="history.go(-1);">
+            <input type="button" value="Back" id="backBtn" onClick="goback()">
             <?php
             session_start();
             include_once 'Support/impFunction.php';
             $_SESSION['adminLoginStatus'] = false;
-            if(isset($_POST['adminLogin'])){
-                $adminEmail = $_POST['email'];
-                $adminPassword = $_POST['password'];
-                if($adminEmail === '' || $adminPassword === '')
-                {
-                    echo "Fill in username and password";
-                }
-                else{
-                    include 'Support/connection.php';
-                    $sql = "SELECT admin_password from admin_table where admin_user_id = '$adminEmail'";
-                    $result = mysqli_query($con,$sql);
-                    if(mysqli_num_rows($result)>0){
-                        $row = mysqli_fetch_assoc($result);
-                        if($adminPassword === $row["admin_password"]){
-                            $_SESSION['adminLoginStatus'] = true;
-                            header("Location: adminDashboard.php");
-                            exit;
-                        }
-                        else {
-                            msgDisplayer("Invalid User Name or Password");
-                        }
+            if($_SESSION['adminLoginStatus'] === false)
+            {
+                if(isset($_POST['adminLogin'])){
+                    $adminEmail = $_POST['email'];
+                    $adminPassword = $_POST['password'];
+                    if($adminEmail === '' || $adminPassword === '')
+                    {
+                        echo "Fill in username and password";
                     }
                     else{
-                        msgDisplayer("Login Failed");
+                        include 'Support/connection.php';
+                        $sql = "SELECT admin_password FROM admin_table WHERE admin_user_id = '$adminEmail'";
+                        $result = mysqli_query($con,$sql);
+                        if(mysqli_num_rows($result)>0){
+                            $row = mysqli_fetch_assoc($result);
+                            if($adminPassword === $row["admin_password"]){
+                                $_SESSION['adminLoginStatus'] = true;
+                                header("Location: adminDashboard.php");
+                                exit;
+                            }
+                            else {
+                                msgDisplayer("Invalid User Name or Password");
+                            }
+                        }
+                        else{
+                            msgDisplayer("Login Failed");
+                        }
                     }
                 }
+            }else{
+                header("Location: adminDashboard.php");
             }
             ?>
         </div>
     </form>
+    <script type="text/javascript">
+        function goback(){
+            location.href = "http://localhost/PHP-Dashboard";
+        }
+    </script>
 </body>
 </html>
+

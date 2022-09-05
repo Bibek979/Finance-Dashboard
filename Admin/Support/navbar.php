@@ -7,6 +7,6 @@
         <li><a href="#">Dashboard</a></li>
         <li><a href="">Manage Users</a></li>
         <li><a href="">Settings</a></li>
-        <li><a href="">Log Out</a></li>
+        <li><a href="Support/logout.php">Log Out</a></li>
     </ul>
 </nav>

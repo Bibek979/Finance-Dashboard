@@ -112,7 +112,7 @@ if(isset($_POST['loginbtn'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finance Dashboard</title>
-    <link rel="stylesheet" href="http://localhost/PHP-Dashboard/Support/style.css">
+    <link rel="stylesheet" href="http://192.168.1.10/PHP-Dashboard/Support/style.css">
 </head>
 <body>
     <?php include_once 'Support/header.php';?>    

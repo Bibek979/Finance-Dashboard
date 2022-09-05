@@ -51,7 +51,7 @@ if(isset($_POST['updateexpensebtn']))
     <script src="./Support/modalScript.js"></script>
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="http://localhost/PHP-Dashboard/Support/style.css">
+    <link rel="stylesheet" href="http://192.168.1.10/PHP-Dashboard/Support/style.css">
 </head>
 <body>
     <?php include_once 'Support/header.php';
@@ -78,17 +78,40 @@ if(isset($_POST['updateexpensebtn']))
                 <!-- LM stands for Last Month -->
                 <div class="LMExpenseCard">
                     <h6>Last Month Total Expense</h6>
-                    <h5>&#x20B9;5000</h5>
-                </div>
-                <div class="LMSavingsCard">
-                    <h6>Last Month Total Savings</h6>
-                    <h5>&#x20B9;5000</h5>
-                </div>
-                <div class="TargetRemaining">
-                    <h6>Target Remaining</h6>
-                    <h5>&#x20B9;5000</h5>
-                </div>
-
+                    <?php
+                        include 'Support/connection.php';
+                        $uid = $_SESSION['loggedInUserID'];
+                        $expense = 0;
+                        $query = "SELECT amount FROM savings_expense_table WHERE uid_no='$uid' AND payment_type=1";
+                        $result = mysqli_query($con, $query);
+                        if(mysqli_num_rows($result) > 0)
+                        {
+                            while($row = mysqli_fetch_assoc($result)) {
+                                $expense = $expense + $row['amount'];
+                            }
+                        }
+                        $savings = 0;
+                        $query = "SELECT amount FROM savings_expense_table WHERE uid_no='$uid' AND payment_type=0";
+                        $result = mysqli_query($con, $query);
+                        if(mysqli_num_rows($result) > 0)
+                        {
+                            while($row = mysqli_fetch_assoc($result)) {
+                                $savings = $savings + $row['amount'];
+                            }
+                        }
+                        echo "
+                        <h5>&#x20B9;$expense</h5>
+                        </div>
+                        <div class=\"LMSavingsCard\">
+                            <h6>Last Month Total Savings</h6>
+                            <h5>&#x20B9;$savings</h5>
+                        </div>
+                        <div class=\"TargetRemaining\">
+                            <h6>Target Remaining</h6>
+                            <h5>&#x20B9;5000</h5>
+                        </div>
+                        ";
+                    ?>
             </div>
 
             <div class="cards" id="cards">

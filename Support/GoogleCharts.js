@@ -30,20 +30,20 @@ function drawChart() {
         ]);
 
         var options3 = {
-            title: 'My Daily Activities',
+            title: 'Savings',
             is3D: true,
             'height': '250px',
             'width': '250px'
           };
 
   var options = {
-    'title': "This Trial",
+    'title': "Expenses",
     'is3D': true,
     'height': '250px',
     'width': '250px'
   }
   var optionForLine = {
-    'title': 'Company Performance',
+    'title': 'Last Month',
     'curveType': 'function',
     'legend': { position: 'bottom' },
     'height': '250px',
