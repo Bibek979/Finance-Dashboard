@@ -153,7 +153,9 @@ if(isset($_POST['updateexpensebtn']))
                             <td>" . $row['amount'] . "</td>
                             <td>" . $tempcreditconv . "</td>
                             <td>" . $row['Reason'] . "</td>
-                        </tr>";
+                            <td><img src=\"./Resources/remove.png\" alt=\"\" srcset=\"\" height=\"25px\"></td>
+                        </tr>
+                        ";
                         }
                     }
                     
