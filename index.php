@@ -26,7 +26,7 @@
             </p>
             <button>Explore !</button>
         </div>
-        <img src="./Resources/heroImage.jpg" alt="" 
+        <img src="./Resources/heroImage.jpg" alt="Hero Image" 
         height=250px srcset="">
     </section>
 
