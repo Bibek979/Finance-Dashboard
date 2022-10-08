@@ -51,7 +51,7 @@ if(isset($_POST['updateexpensebtn']))
     <script src="./Support/modalScript.js"></script>
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="http://192.168.1.10/PHP-Dashboard/Support/style.css">
+    <link rel="stylesheet" href="http://localhost/PHP-Dashboard/Support/style.css">
 </head>
 <body>
     <?php include_once 'Support/header.php';
